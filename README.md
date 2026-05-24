@@ -201,4 +201,4 @@ MIT License
 ## Links
 
 - GitHub Repository: https://github.com/krishkhare049/synapse-sdk
-- Documentation: [synapseai.vercel.app](https://synapse-ai-service.vercel.app/)
+- Documentation: [synapse-ai-service.vercel.app](https://synapse-ai-service.vercel.app/)
