@@ -33,5 +33,13 @@
   "devDependencies": {
     "tsup": "^8.0.0",
     "typescript": "^5.0.0"
-  }
+  },
+  "repository": {
+  "type": "git",
+  "url": "https://github.com/krishkhare049/synapse-sdk.git"
+  },
+  "homepage": "https://github.com/krishkhare049/synapse-sdk",
+  "bugs": {
+    "url": "https://github.com/krishkhare049/synapse-sdk/issues"
+}
 }
