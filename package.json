@@ -1,6 +1,6 @@
 {
   "name": "@khareindustries/synapse-sdk",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "JavaScript SDK for Synapse memory infrastructure",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -10,12 +10,12 @@
     "dist",
     "README.md"
   ],
-"exports": {
-  ".": {
-    "types": "./dist/index.d.ts",
-    "import": "./dist/index.js",
-    "require": "./dist/index.cjs"
-  }
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
   },
   "scripts": {
     "build": "tsup",
@@ -35,11 +35,11 @@
     "typescript": "^5.0.0"
   },
   "repository": {
-  "type": "git",
-  "url": "https://github.com/krishkhare049/synapse-sdk.git"
+    "type": "git",
+    "url": "https://github.com/krishkhare049/synapse-sdk.git"
   },
   "homepage": "https://github.com/krishkhare049/synapse-sdk",
   "bugs": {
     "url": "https://github.com/krishkhare049/synapse-sdk/issues"
-}
+  }
 }
