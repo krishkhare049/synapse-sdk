@@ -1,6 +1,6 @@
 {
   "name": "@khareindustries/synapse-sdk",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "JavaScript SDK for Synapse memory infrastructure",
   "type": "module",
   "main": "./dist/index.cjs",
