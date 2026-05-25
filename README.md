@@ -1,6 +1,6 @@
 # Synapse JavaScript SDK
 
-Minimal TypeScript SDK for Synapse memory infrastructure.
+Minimal TypeScript SDK for Synapse AI memory infrastructure.
 
 Synapse helps AI applications store, retrieve, and manage long-term memory using semantic retrieval.
 
@@ -9,7 +9,7 @@ Synapse helps AI applications store, retrieve, and manage long-term memory using
 ## Installation
 
 ```bash
-npm install @synapse/memory-sdk
+npm install @khareindustries/synapse-sdk
 ```
 
 ---
@@ -31,7 +31,7 @@ npm install @synapse/memory-sdk
 ```ts
 import {
   createSynapseClient,
-} from "@synapse/memory-sdk";
+} from "@khareindustries/synapse-sdk";
 
 const synapse = createSynapseClient({
   apiUrl: "http://localhost:8000",
@@ -71,7 +71,7 @@ main();
 ```ts
 import {
   createSynapseClient,
-} from "@synapse/memory-sdk";
+} from "@khareindustries/synapse-sdk";
 
 const synapse = createSynapseClient({
   apiUrl: "https://api.synapseai.dev",
@@ -83,8 +83,6 @@ const synapse = createSynapseClient({
 ---
 
 ## API
-
----
 
 ### createSynapseClient()
 
@@ -102,7 +100,7 @@ const synapse = createSynapseClient({
 |---|---|---|---|
 | apiUrl | string | Yes | Synapse server URL |
 | apiKey | string | No | API authentication key |
-| timeout | number | No | Request timeout in ms |
+| timeout | number | No | Request timeout in milliseconds |
 
 ---
 
@@ -198,7 +196,5 @@ MIT License
 
 ## Links
 
-## Links
-
 - GitHub Repository: https://github.com/krishkhare049/synapse-sdk
-- Documentation: [synapse-ai-service.vercel.app](https://synapse-ai-service.vercel.app/)
+- Documentation: https://synapse-ai-service.vercel.app/
