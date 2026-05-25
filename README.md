@@ -1,5 +1,11 @@
 # Synapse JavaScript SDK
 
+⚠️ Synapse is currently in active development.
+
+Current releases are focused on self-hosted/local development workflows.
+
+Hosted Synapse Cloud and managed infrastructure are currently being finalized and are expected to be available within the next week.
+
 Minimal TypeScript SDK for Synapse AI memory infrastructure.
 
 Synapse helps AI applications store, retrieve, and manage long-term memory using semantic retrieval.
