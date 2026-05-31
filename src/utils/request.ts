@@ -7,7 +7,57 @@ interface RequestOptions {
   fetchImpl: typeof fetch;
 }
 
-export async function postRequest<T>(
+async function readResponsePayload(
+  response: Response
+): Promise<unknown> {
+  const raw = await response.text();
+
+  if (!raw) {
+    return null;
+  }
+
+  try {
+    return JSON.parse(raw);
+  } catch {
+    return raw;
+  }
+}
+
+function buildRequestError(
+  response: Response,
+  payload: unknown
+): SynapseError {
+  if (
+    payload &&
+    typeof payload === "object"
+  ) {
+    const record = payload as Record<
+      string,
+      unknown
+    >;
+
+    return new SynapseError(
+      typeof record.detail === "string"
+        ? record.detail
+        : typeof record.error === "string"
+          ? record.error
+          : "Synapse request failed",
+      response.status,
+      payload
+    );
+  }
+
+  return new SynapseError(
+    typeof payload === "string" && payload.trim()
+      ? payload
+      : "Synapse request failed",
+    response.status,
+    payload
+  );
+}
+
+async function sendRequest<T>(
+  method: "POST" | "PUT" | "DELETE",
   path: string,
   payload: unknown,
   options: RequestOptions
@@ -22,7 +72,7 @@ export async function postRequest<T>(
     const response = await options.fetchImpl(
       `${options.apiUrl}${path}`,
       {
-        method: "POST",
+        method,
         headers: {
           "Content-Type": "application/json",
           ...(options.apiKey && {
@@ -34,14 +84,13 @@ export async function postRequest<T>(
       }
     );
 
-    const data = await response.json();
+    const data = await readResponsePayload(
+      response
+    );
 
     if (!response.ok) {
-      throw new SynapseError(
-        data?.detail ||
-          data?.error ||
-          "Synapse request failed",
-        response.status,
+      throw buildRequestError(
+        response,
         data
       );
     }
@@ -58,4 +107,43 @@ export async function postRequest<T>(
   } finally {
     clearTimeout(timeout);
   }
+}
+
+export async function postRequest<T>(
+  path: string,
+  payload: unknown,
+  options: RequestOptions
+): Promise<T> {
+  return sendRequest(
+    "POST",
+    path,
+    payload,
+    options
+  );
+}
+
+export async function putRequest<T>(
+  path: string,
+  payload: unknown,
+  options: RequestOptions
+): Promise<T> {
+  return sendRequest(
+    "PUT",
+    path,
+    payload,
+    options
+  );
+}
+
+export async function deleteRequest<T>(
+  path: string,
+  payload: unknown,
+  options: RequestOptions
+): Promise<T> {
+  return sendRequest(
+    "DELETE",
+    path,
+    payload,
+    options
+  );
 }

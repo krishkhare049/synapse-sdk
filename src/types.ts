@@ -25,6 +25,46 @@ export interface RetrieveRequest {
   includeWorkingMemory?: boolean;
 }
 
+export interface BuildContextRequest
+  extends RetrieveRequest {
+  maxTokens?: number;
+}
+
+export interface OpenAIMessage {
+  role: string;
+  content: unknown;
+  [key: string]: unknown;
+}
+
+export interface InjectRequest
+  extends Omit<BuildContextRequest, "query"> {
+  messages: OpenAIMessage[];
+  query?: string;
+}
+
+export interface WrapOptions
+  extends Omit<InjectRequest, "messages"> {
+  source?: string;
+  ingestMetadata?: Record<string, unknown>;
+}
+
+export interface UpdateMemoryRequest {
+  namespace: string;
+  userId: string;
+  memoryId: string;
+  text?: string;
+  importance?: number;
+  category?: string;
+  tags?: string[];
+  metadata?: Record<string, unknown>;
+}
+
+export interface DeleteMemoryRequest {
+  namespace: string;
+  userId: string;
+  memoryId: string;
+}
+
 export interface SynapseMemory {
   id: string;
   namespace: string;
@@ -73,4 +113,19 @@ export interface RetrieveResponse {
   memories: SynapseMemory[];
   result_count: number;
   filters: Record<string, unknown>;
+}
+
+export interface UpdateMemoryResponse {
+  success: boolean;
+  namespace: string;
+  userId: string;
+  memory: SynapseMemory;
+}
+
+export interface DeleteMemoryResponse {
+  success: boolean;
+  namespace: string;
+  userId: string;
+  memoryId: string;
+  deleted: boolean;
 }
