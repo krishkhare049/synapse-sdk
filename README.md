@@ -1,7 +1,7 @@
 # README.md
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/krishkhare049/synapse-sdk/assets/synapse-khare-industries.png" width="120" alt="Synapse Logo" />
+  <img src="https://raw.githubusercontent.com/krishkhare049/synapse-sdk/main/assets/synapse-khare-industries.png" width="120" alt="Synapse Logo" />
 </p>
 
 <h1 align="center">Synapse</h1>
@@ -40,7 +40,7 @@
 ---
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/krishkhare049/synapse-sdk/assets/synapsebannercode.png" alt="Synapse Banner" />
+  <img src="https://raw.githubusercontent.com/krishkhare049/synapse-sdk/main/assets/synapsebannercode.png" alt="Synapse Banner" />
 </p>
 
 ---
@@ -114,7 +114,7 @@ No manual prompt engineering required.
 ## Demo
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/krishkhare049/synapse-sdk/assets/demo.gif" alt="Synapse Demo" />
+  <img src="https://raw.githubusercontent.com/krishkhare049/synapse-sdk/main/assets/demo.gif" alt="Synapse Demo" />
 </p>
 
 🎥 Full introduction video coming soon.
@@ -149,7 +149,7 @@ No manual prompt engineering required.
 ## Architecture
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/krishkhare049/synapse-sdk/assets/synapsearch.png" alt="Synapse Architecture" />
+  <img src="https://raw.githubusercontent.com/krishkhare049/synapse-sdk/main/assets/synapsearch.png" alt="Synapse Architecture" />
 </p>
 
 Synapse combines:
